@@ -1,4 +1,4 @@
-const secret = require('./secret');
+const secret = require('../utils/secret');
 module.exports = (keyword, location) => {
   return {
     method: 'GET',

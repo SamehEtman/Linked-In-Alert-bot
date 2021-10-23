@@ -20,5 +20,5 @@ module.exports = async function sendNotification(num , jobs , referer) {
     html: htmlText,
   });
 
-  console.log('Message sent: %s', info.messageId);
+  console.log('Email sent');
 };
