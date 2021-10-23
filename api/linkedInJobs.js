@@ -1,5 +1,5 @@
 const request = require('request-promise');
-const {isEqual} = require('lodash');
+const isEqual = require('lodash.isequal');
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 const argv = yargs(hideBin(process.argv)).argv;
