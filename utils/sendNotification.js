@@ -14,7 +14,7 @@ module.exports = async function sendNotification(num, jobs, referer) {
   let htmlText = makeHTML(num, jobs, referer);
   try {
     let info = await transporter.sendMail({
-      from: `"Sameh LinkedIn bot" <${fromEmail}>`,
+      from: `"LinkedIn Alert bot" <${fromEmail}>`,
       to: toEmail,
       subject: `Linked In jobs`,
       html: htmlText,
