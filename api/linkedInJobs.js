@@ -1,12 +1,12 @@
 const request = require('request-promise');
-const _ = require('lodash');
+const {isEqual} = require('lodash');
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 const argv = yargs(hideBin(process.argv)).argv;
 
 try {
   if (!argv.title) throw 'Please add Title';
-  if (!argv.location) throw 'Please add Title';
+  if (!argv.location) throw 'Please add Location';
 } catch (error) {
   console.log(error);
   process.exit();
@@ -26,7 +26,7 @@ module.exports = async (oldJobs) => {
     const allJobs = extractJobs(included);
     let size;
     for (size = 0; size < allJobs.length; size++) {
-      if (_.isEqual(allJobs[size], oldJobs[0])) {
+      if (isEqual(allJobs[size], oldJobs[0])) {
         break;
       }
     }
