@@ -4,8 +4,8 @@ const _ = require('lodash');
 const sendNotification = require('./utils/sendNotification');
 
 const options = require('./utils/requestOptions')(
-  process.argv[2],
-  process.argv[3]
+  process.argv[2] || 'node js',
+  process.argv[3] || 'Egypt'
 );
 
 const oldJobs = JSON.parse(fs.readFileSync('./assets/jobs.json'));
@@ -30,9 +30,8 @@ request(options, function (error, response) {
   for (let i = 0; i < num; i++) {
     newJobs.push(jobs[i]);
   }
-  console.log(num);
   if (num !== 0) {
-    console.log(`found ${num} new jobs`);
+    console.log(`found ${num} new job${num > 1 ? 's' : ''}`);
     sendNotification(num, newJobs);
     fs.writeFileSync('./assets/jobs.json', JSON.stringify(jobs));
   } else {
