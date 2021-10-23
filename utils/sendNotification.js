@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 const { myEmail, password } = require('./secret');
 const makeHTML = require('./makeHTML');
 
-module.exports = async function sendNotification(num , jobs) {
+module.exports = async function sendNotification(num , jobs , referer) {
   let transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
@@ -11,7 +11,7 @@ module.exports = async function sendNotification(num , jobs) {
     },
   });
 
-  let htmlText = makeHTML(num , jobs);
+  let htmlText = makeHTML(num , jobs,referer);
 
   let info = await transporter.sendMail({
     from: `"Sameh LinkedIn bot" <${myEmail}>`,

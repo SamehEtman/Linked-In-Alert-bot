@@ -30,9 +30,10 @@ request(options, function (error, response) {
   for (let i = 0; i < num; i++) {
     newJobs.push(jobs[i]);
   }
+
   if (num !== 0) {
     console.log(`found ${num} new job${num > 1 ? 's' : ''}`);
-    sendNotification(num, newJobs);
+    sendNotification(num, newJobs, options.headers.Referer);
     fs.writeFileSync('./assets/jobs.json', JSON.stringify(jobs));
   } else {
     console.log(`There's no new jobs`);
