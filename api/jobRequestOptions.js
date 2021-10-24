@@ -14,10 +14,8 @@ module.exports = (keyword, location) => {
         '{"clientVersion":"1.9.5536","mpVersion":"1.9.5536","osName":"web","timezoneOffset":2,"timezone":"Africa/Cairo","deviceFormFactor":"DESKTOP","mpName":"voyager-web","displayDensity":1,"displayWidth":1680,"displayHeight":1050}',
       'x-li-page-instance':
         'urn:li:page:d_flagship3_search_srp_jobs;FPXts15OT8SG7HO1ggVy2w==',
-      'csrf-token': 'ajax:-3607188979879002382',
+      'csrf-token': secret.csrf, 
       'x-restli-protocol-version': '2.0.0',
-      'Proxy-Authorization':
-        'Basic KnRlc3R1c2VyX2Nocm9tZWFwcF8zX01vbiBTZXAgMjcgMjAyMSAwMTozMDo1MyBHTVQrMDIwMCAoRWFzdGVybiBFdXJvcGVhbiBTdGFuZGFyZCBUaW1lKTo=',
       Connection: 'keep-alive',
       Referer: `https://www.linkedin.com/jobs/search/?keywords=${keyword}&location=${location}&sortBy=DD`,
       Cookie: secret.cookie,
